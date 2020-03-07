@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {MailFolder} from "../app/mail-folder";
 import { Observable } from 'rxjs/Observable';
+import {  } from "../app/app.component";
 
 @Injectable()
 export class FolderService {
@@ -13,8 +14,9 @@ export class FolderService {
   }
 
   public findAll(name: string, pass: string): Observable<MailFolder[]> {
-    name = "maevskii@list.ru";
-    pass = "Ii98729872list";
+    name = (document.getElementById("name") as HTMLInputElement).value;
+    pass = ((document.getElementById("pass") as HTMLInputElement).value);
+
     let myData = {
       name: name,
       pass: pass

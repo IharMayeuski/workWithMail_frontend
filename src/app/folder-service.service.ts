@@ -12,7 +12,13 @@ export class FolderService {
     this.foldersUrl = 'http://localhost:8080/folders';
   }
 
-  public findAll(): Observable<MailFolder[]> {
-    return this.http.get<MailFolder[]>(this.foldersUrl);
+  public findAll(name: string, pass: string): Observable<MailFolder[]> {
+    name = "maevskii@list.ru";
+    pass = "Ii98729872list";
+    let myData = {
+      name: name,
+      pass: pass
+    };
+    return this.http.post<MailFolder[]>(this.foldersUrl,myData);
   }
 }

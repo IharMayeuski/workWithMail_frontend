@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FolderService} from '../../app/folder-service.service';
+import {FolderService} from '../service/folder-service.service';
 import {MailFolder} from "../mail-folder";
 import {selector} from "rxjs/operator/publish";
 

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {MailFolder} from "../app/mail-folder";
+import {MailFolder} from "../mail-folder";
 import { Observable } from 'rxjs/Observable';
-import {  } from "../app/app.component";
+import {  } from "../app.component";
 
 @Injectable()
 export class FolderService {

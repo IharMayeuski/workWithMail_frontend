@@ -1,0 +1,15 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #searchForm="ngForm">
+      <div class="form-group">
+        <label for="search">Phrase in name for searching</label>
+        <input type="text" [(ngModel)]="search.name"
+               class="form-control"
+               id="search"
+               name="search"
+               placeholder="Enter your text for searching">
+      </div>
+      <button type="submit" class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>

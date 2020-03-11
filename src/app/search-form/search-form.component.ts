@@ -24,6 +24,6 @@ export class SearchFormComponent {
   }
 
   gotoUserList() {
-    this.router.navigate(['/users']);
+    this.router.navigate(['/search']);
   }
 }

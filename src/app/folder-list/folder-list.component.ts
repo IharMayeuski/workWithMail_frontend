@@ -18,7 +18,7 @@ export class FolderListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.folderService.findAll('maevskii@list.ru', 'Ii98729872list').subscribe(data => {
+    this.folderService.findAll(this.name, this.pass).subscribe(data => {
       this.folders = data;
     });
   }

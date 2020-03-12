@@ -11,6 +11,9 @@ import { Search } from '../../app/search';
 export class SearchFormComponent {
 
   search: Search;
+  name = (document.getElementById("name") as HTMLInputElement).value;
+  pass = ((document.getElementById("pass") as HTMLInputElement).value);
+
 
   constructor(
     private route: ActivatedRoute,
@@ -20,7 +23,7 @@ export class SearchFormComponent {
   }
 
   onSubmit() {
-    this.searchService.save(this.search).subscribe(result => this.gotoUserList());
+    this.searchService.save(this.search, this.name, this.pass).subscribe(result => this.gotoUserList());
   }
 
   gotoUserList() {

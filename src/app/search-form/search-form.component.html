@@ -2,6 +2,13 @@
   <div class="card-body">
     <form (ngSubmit)="onSubmit()" #searchForm="ngForm">
       <div class="form-group">
+        <label for="path">Выберите путь до папки сохранения</label>
+        <input type="file" webkitdirectory directory
+               [(ngModel)]="search.path"
+               class="form-control"
+               id="path"
+               name="path"
+               placeholder="Choose your path for downloading">
         <label for="search">Phrase in name for searching</label>
         <input type="text" [(ngModel)]="search.name"
                class="form-control"

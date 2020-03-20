@@ -11,17 +11,16 @@ export class SearchService {
     this.searchUrl = 'http://localhost:8080/search';
   }
 
-  public save(search: Search, name: string, pass: string) {
-    // return this.http.post<Search>(this.searchUrl, search.name);
-
-    name = (document.getElementById("name") as HTMLInputElement).value;
-    pass = ((document.getElementById("pass") as HTMLInputElement).value);
+  public save(search: Search) {
+    const name = (document.getElementById("name") as HTMLInputElement).value;
+    const pass = ((document.getElementById("pass") as HTMLInputElement).value);
 
     let data = {
       name: name,
       pass: pass,
       search: search.name,
-      path: search.path
+      path: search.path,
+      deleteTo: search.checked
     };
 
     return this.http.post<Search[]>(this.searchUrl, data);

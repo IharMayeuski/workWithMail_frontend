@@ -7,13 +7,10 @@ import { Search } from '../../app/search';
   selector: 'app-search-form',
   templateUrl: './search-form.component.html',
   styleUrls: ['./search-form.component.css']
+
 })
 export class SearchFormComponent {
-
   search: Search;
-  name = (document.getElementById("name") as HTMLInputElement).value;
-  pass = ((document.getElementById("pass") as HTMLInputElement).value);
-
 
   constructor(
     private route: ActivatedRoute,
@@ -22,11 +19,17 @@ export class SearchFormComponent {
     this.search = new Search();
   }
 
+  options = [
+    {name: '  Отметить прочтено', value: 'read', checked: true},
+    {name: '  Перенести в корзину', value: 'basket', checked: false},
+    {name: '  Удалить безвозвратно', value: 'delete', checked: false}
+  ]
+
   onSubmit() {
-    this.searchService.save(this.search, this.name, this.pass).subscribe(result => this.gotoUserList());
+    this.searchService.save(this.search).subscribe(result => this.gotoSearch());
   }
 
-  gotoUserList() {
+  gotoSearch() {
     this.router.navigate(['/search']);
   }
 }

@@ -2,21 +2,31 @@
   <div class="card-body">
     <form (ngSubmit)="onSubmit()" #searchForm="ngForm">
       <div class="form-group">
-        <label for="path">Выберите путь до папки сохранения</label>
-        <input type="file" webkitdirectory directory
-               [(ngModel)]="search.path"
-               class="form-control"
-               id="path"
-               name="path"
-               placeholder="Choose your path for downloading">
-        <label for="search">Phrase in name for searching</label>
+        <label for="search">
+          <b>Название файла:</b>
+        </label>
         <input type="text" [(ngModel)]="search.name"
                class="form-control"
                id="search"
                name="search"
-               placeholder="Enter your text for searching">
+               placeholder="Enter your text for searching"><br>
+        <label for="options">
+          <b>Что делать с письмом, выберите действие:</b>
+        </label>
+        <div *ngFor="let option of options">
+          <p><input
+            name="options"
+            id="options"
+            type="radio"
+            value="{{option.value}}"
+            [checked]="true"
+            [(ngModel)]="search.checked"/>{{option.name}}
+          </p>
+        </div>
+        <button type="submit" class="btn btn-info">Submit</button>
       </div>
-      <button type="submit" class="btn btn-info">Submit</button>
     </form>
   </div>
 </div>
+
+

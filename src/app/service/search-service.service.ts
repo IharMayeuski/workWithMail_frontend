@@ -20,7 +20,8 @@ export class SearchService {
     let data = {
       name: name,
       pass: pass,
-      search: search.name
+      search: search.name,
+      path: search.path
     };
 
     return this.http.post<Search[]>(this.searchUrl, data);

@@ -3,15 +3,29 @@
     <form (ngSubmit)="onSubmit()" #searchForm="ngForm">
       <div class="form-group">
         <label for="search">
-          <b>Название файла:</b>
+          <b>File name:</b>
         </label>
         <input type="text" [(ngModel)]="search.name"
                class="form-control"
                id="search"
                name="search"
                placeholder="Enter your text for searching"><br>
+        <label for="fileMove">
+          <b>Where do you move your files?</b>
+        </label>
+        <div *ngFor="let file of fileMove">
+          <p><input
+            name="fileMove"
+            id="fileMove"
+            type="radio"
+            value="{{file.value}}"
+            [checked]="true"
+            [(ngModel)]="search.move"/>{{file.name}}
+          </p>
+        </div>
+
         <label for="options">
-          <b>Что делать с письмом, выберите действие:</b>
+          <b>What will we do with letter in your email?</b>
         </label>
         <div *ngFor="let option of options">
           <p><input

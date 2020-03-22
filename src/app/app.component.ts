@@ -10,6 +10,6 @@ export class AppComponent {
   title: string;
 
   constructor() {
-    this.title = 'Введите ящик';
+    this.title = 'Check your email';
   }
 }

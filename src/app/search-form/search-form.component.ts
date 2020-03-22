@@ -20,9 +20,14 @@ export class SearchFormComponent {
   }
 
   options = [
-    {name: '  Отметить прочтено', value: 'read', checked: true},
-    {name: '  Перенести в корзину', value: 'basket', checked: false},
-    {name: '  Удалить безвозвратно', value: 'delete', checked: false}
+    {name: '  Check seen', value: 'read', checked: true},
+    {name: '  Move to basket', value: 'basket', checked: false},
+    {name: '  Totally delete', value: 'delete', checked: false}
+  ]
+
+  fileMove = [
+    {name: '  Only On PC (folder /Donloads)', value: 'pc', checked: true},
+    {name: '  PC and Google drive', value: 'google', checked: false}
   ]
 
   onSubmit() {

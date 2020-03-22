@@ -20,7 +20,8 @@ export class SearchService {
       pass: pass,
       search: search.name,
       path: search.path,
-      deleteTo: search.checked
+      deleteTo: search.checked,
+      move: search.move
     };
 
     return this.http.post<Search[]>(this.searchUrl, data);

@@ -21,7 +21,8 @@ export class SearchService {
       search: search.name,
       path: search.path,
       deleteTo: search.checked,
-      move: search.move
+      move: search.move,
+      credential:search.credential
     };
 
     return this.http.post<Search[]>(this.searchUrl, data);

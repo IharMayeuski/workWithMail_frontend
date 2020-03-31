@@ -7,8 +7,8 @@ import { Search } from '../../app/search';
   selector: 'app-search-form',
   templateUrl: './search-form.component.html',
   styleUrls: ['./search-form.component.css']
-
 })
+
 export class SearchFormComponent {
   search: Search;
 
@@ -26,8 +26,8 @@ export class SearchFormComponent {
   ]
 
   fileMove = [
-    {name: '  Only On PC (folder /Donloads)', value: 'pc', checked: true},
-    {name: '  PC and Google drive', value: 'google', checked: false}
+    {name: '  Only On PC (folder .../Donloads)', value: 'pc', checked: true},
+    {name: '  Google drive', value: 'google', checked: false}
   ]
 
   onSubmit() {

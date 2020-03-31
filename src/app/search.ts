@@ -3,4 +3,5 @@ export class Search {
   path: string
   checked: string
   move: string
+  credential: string
 }

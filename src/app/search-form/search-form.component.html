@@ -23,6 +23,12 @@
             [(ngModel)]="search.move"/>{{file.name}}
           </p>
         </div>
+        <label>
+          <b>Path to credential for google drive:</b>
+        </label>
+        <div>
+          <p><input type="file" name="f" [(ngModel)]="search.credential">
+        </div>
 
         <label for="options">
           <b>What will we do with letter in your email?</b>

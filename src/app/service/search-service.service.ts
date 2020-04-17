@@ -14,6 +14,7 @@ export class SearchService {
   public save(search: Search) {
     const name = (document.getElementById("name") as HTMLInputElement).value;
     const pass = ((document.getElementById("pass") as HTMLInputElement).value);
+    const googleFolder = ((document.getElementById("googleFolder") as HTMLInputElement).value);
 
     let data = {
       name: name,
@@ -22,7 +23,8 @@ export class SearchService {
       path: search.path,
       deleteTo: search.checked,
       move: search.move,
-      credential:search.credential
+      credential:search.credential,
+      googleFolder: googleFolder
     };
 
     return this.http.post<Search[]>(this.searchUrl, data);

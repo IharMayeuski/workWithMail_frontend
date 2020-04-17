@@ -14,8 +14,6 @@ import {UserService} from './service/user-service.service';
 import {FolderService} from "./service/folder-service.service";
 import {SearchService} from "./service/search-service.service";
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
